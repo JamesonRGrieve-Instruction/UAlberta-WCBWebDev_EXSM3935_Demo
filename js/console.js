@@ -1,9 +1,9 @@
 let inputBar = document.querySelector("#input");
-let output = document.querySelector("#output");
+let outputPanel = document.querySelector("#output");
 
 let proceed = false;
 const timeout = async ms => new Promise(res => setTimeout(res, ms));
-function print(string) {
+function output(string) {
     // Anything passed into here will be printed in the web page.
     let newP = document.createElement("p");
     newP.innerText = string;
@@ -33,7 +33,7 @@ inputBar.addEventListener("keyup", function(event) {
       submit();
     }
   });
-output.addEventListener("click", function(event) {
+outputPanel.addEventListener("click", function(event) {
     inputBar.focus();
 });
 
