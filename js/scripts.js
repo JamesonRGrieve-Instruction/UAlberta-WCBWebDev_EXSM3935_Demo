@@ -6,6 +6,9 @@ async function main() {
     One logic path will execute if the expression (called a condition) is true, and the other will execute if it is false.
     */
 
+    // We can prompt the user for input by using "await input()", then store what they enter in a variable.
+    let userInput = await input("Please enter a number: ");
+
     if(42<10)
     // This side runs if the condition is true!
     {
