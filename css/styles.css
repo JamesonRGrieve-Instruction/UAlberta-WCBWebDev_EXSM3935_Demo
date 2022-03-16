@@ -2,19 +2,27 @@ html {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     --green: #0C0;
     --white: #EEE;
-    --black: #111;
+    --black: #111111;
+    --error: red;
+    --meta: cyan;
 }
 body, .white-on-black {
     --text: var(--white);
     --back: var(--black);
+    --error: red;
+    --meta: rgb(50, 163, 255);
 }
 .black-on-white {
     --text: var(--black);
     --back: var(--white);
+    --error: firebrick;
+    --meta: blue;
 }
 .green-on-black {
     --text: var(--green);
     --back: var(--black);
+    --error: red;
+    --meta: rgb(50, 163, 255);
 }
 
 
@@ -28,6 +36,12 @@ body, .white-on-black {
 #output p {
     margin: 0;
     color: var(--text);
+}
+#output .error {
+    color: var(--error);
+}
+#output .meta {
+    color: var(--meta);
 }
 #input {
     position: absolute !important;

@@ -3,10 +3,14 @@ let outputPanel = document.querySelector("#output");
 
 let proceed = false;
 const timeout = async ms => new Promise(res => setTimeout(res, ms));
-function output(string) {
+function output(string, type="normal") {
     // Anything passed into here will be printed in the web page.
     let newP = document.createElement("p");
     newP.innerText = string;
+    if (type != "normal")
+    {
+        newP.classList.add(type);
+    }
     document.querySelector("#output").appendChild(newP);
 }
 async function input(string) {
@@ -50,5 +54,9 @@ for (item of document.querySelectorAll(".theme"))
         refreshTheme();
     });
 }
-
+async function run() {
+    await main().catch((e) => output("\n---UNHANDLED EXCEPTION---\n"+e.stack, "error"));
+    output("\nEnd of program, please refresh the page (F5) to restart the program.", "meta");
+}
 refreshTheme();
+run();
