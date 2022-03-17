@@ -61,7 +61,23 @@ async function main() {
         }
     /*    
         3. Create a program that accepts a two numbers from the user and congratulates them if both numbers are positive.
+
+        prompt and store two numbers from the user
+        if the first number is positive, and the second number is positive
+            congratulate the user
+        otherwise
+            tell the user to try again 
     */
+    let userInputQ3One = await input("Please enter the first number: ");
+    let userInputQ3Two = await input("Please enter the second number: ");
+    if (userInputQ3One > 0 && userInputQ3Two > 0)
+    {
+        print("Conglaturations!");
+    }
+    else
+    {
+        print("Try again and see if you can get both of them to be positive.");
+    }
 }
 
 
