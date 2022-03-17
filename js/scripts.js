@@ -23,6 +23,32 @@ async function main() {
 
     // Everything before or after the decision runs either way.
     output("Either way!");
+
+
+    let switchPrompt = await input("Please enter a number between 1 and 5 inclusive: ");
+    // The switch will not do an implicit conversion, so make sure your data type is correct!
+    // Switches only handle discrete values (IE can't use 'case >= 5', etc).
+    switch(Number(switchPrompt))
+    {
+        case 1:
+            output("You entered one!");
+            break;
+        case 2:
+            output("You entered two!");
+            break;
+        case 3:
+            output("You entered three!");
+            break;
+        case 4:
+            output("You entered four!");
+            break;
+        case 5:
+            output("You entered five!");
+            break;
+        default:
+            output("You didn't read the instructions...");
+            break;
+    }
 }
 
 
