@@ -23,11 +23,15 @@ async function main() {
         {
             output("That number is even!");
         }
-        else
+        else if (isNaN(userInput))
         {
             output("Please enter something valid.");
         }
-        
+        else
+        {
+            output("How did you get here...?");
+        }
+
     /*
         2. Create a program that accepts a number from the user and tells them if it is positive, negative, or zero.
     */
