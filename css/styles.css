@@ -25,7 +25,9 @@ body, .white-on-black {
     --meta: rgb(50, 163, 255);
 }
 
-
+body, #themes {
+    background-color: #CCC;
+}
 #output {
     background-color: var(--back);
     overflow-y:scroll;
@@ -60,7 +62,6 @@ body, .white-on-black {
 }
 
 #themes {
-    background-color: var(--white);
     border: 3px solid var(--black);
     border-radius: 3px;
     position: absolute;
