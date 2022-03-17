@@ -25,9 +25,41 @@ async function main() {
         }
         
     /*
-
         2. Create a program that accepts a number from the user and tells them if it is positive, negative, or zero.
+    */
+        // input() will always return a string value.
+        let userInputTwo = await input("Please enter a number: ");
+        if (userInputTwo > 0)
+        {
+            output("That number is positive!");
+        }
+        else if (userInputTwo < 0)
+        {
+            output("That number is negative!");
+        }
+        else
+        {
+            output("That number is zero.");
+        }
 
+        // This is the same as above, it just has the second if nested inside of the else.
+        // Exactly the same behaviour, people just tend to find the above more readable.
+        if (userInputTwo > 0)
+        {
+            output("That number is positive!");
+        }
+        else 
+        {
+            if (userInputTwo < 0)
+            {
+                output("That number is negative!");
+            }
+            else
+            {
+                output("That number is zero.");
+            }
+        }
+    /*    
         3. Create a program that accepts a two numbers from the user and congratulates them if both numbers are positive.
     */
 }
