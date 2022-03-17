@@ -19,9 +19,13 @@ async function main() {
         }
         // If the result of the modulus is 0, it's odd.
         // However, the else will also catch NaN (Not a Number) results if the user enters something JS can't convert to a number.
-        else
+        else if (userInput % 2 == 0)
         {
             output("That number is even!");
+        }
+        else
+        {
+            output("Please enter something valid.");
         }
         
     /*
@@ -72,11 +76,11 @@ async function main() {
     let userInputQ3Two = await input("Please enter the second number: ");
     if (userInputQ3One > 0 && userInputQ3Two > 0)
     {
-        print("Conglaturations!");
+        output("Conglaturations!");
     }
     else
     {
-        print("Try again and see if you can get both of them to be positive.");
+        output("Try again and see if you can get both of them to be positive.");
     }
 }
 
