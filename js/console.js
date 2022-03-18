@@ -6,8 +6,7 @@ const timeout = async ms => new Promise(res => setTimeout(res, ms));
 function output(string, type="normal") {
     // Anything passed into here will be printed in the web page.
     let newP = document.createElement("p");
-    console.log(string);
-    newP.innerText = string.replaceAll(' ', '\xa0');
+    newP.innerText = String(string).replaceAll(' ', '\xa0');
     if (type != "normal")
     {
         newP.classList.add(type);
@@ -31,7 +30,6 @@ function submit() {
     proceed = true;
 }
 inputBar.addEventListener("keyup", function(event) {
-    console.log(inputBar.value);
     document.querySelector(".editing").innerText = inputBar.value.replaceAll(' ', '\xa0');
     if (event.keyCode === 13) {
       event.preventDefault();
