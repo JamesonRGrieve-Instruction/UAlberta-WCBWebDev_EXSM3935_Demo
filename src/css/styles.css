@@ -5,24 +5,28 @@ html {
     --black: #111111;
     --error: red;
     --meta: cyan;
+    --debug: yellow;
 }
 body, .white-on-black {
     --text: var(--white);
     --back: var(--black);
     --error: red;
     --meta: rgb(50, 163, 255);
+    --debug: yellow;
 }
 .black-on-white {
     --text: var(--black);
     --back: var(--white);
     --error: firebrick;
     --meta: blue;
+    --debug: darkgoldenrod;
 }
 .green-on-black {
     --text: var(--green);
     --back: var(--black);
     --error: red;
     --meta: rgb(50, 163, 255);
+    --debug: yellow;
 }
 
 body, #themes {
