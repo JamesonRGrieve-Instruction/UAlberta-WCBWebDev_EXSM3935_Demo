@@ -49,6 +49,9 @@ body, #themes {
 #output .meta {
     color: var(--meta);
 }
+#output .debug {
+    color: var(--debug);
+}
 #input {
     position: absolute !important;
     top: -9999px !important;
