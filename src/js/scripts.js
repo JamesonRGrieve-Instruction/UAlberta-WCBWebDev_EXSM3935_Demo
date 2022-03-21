@@ -26,10 +26,10 @@ async function main() {
     // This has to be declared up here, otherwise (being a local variable) it will disappear after the switch.
     let discount; 
     let password;
-    let debugMode = false;
+    let debugMode = true;
 
-    if (debugMode) output("Discount code: "+discountCode+", type: "+typeof discountCode);
-    if (debugMode) output("discountPasswords Length: "+discountPasswords.length+". Contents: "+String(discountPasswords));
+    if (debugMode) output("Discount code: "+discountCode+", type: "+typeof discountCode, "debug");
+    if (debugMode) output("discountPasswords Length: "+discountPasswords.length+". Contents: "+String(discountPasswords), "debug");
     // Based on our discountCode input, set our discount.
     // Check to see if the code is within the bounds of the array.
     if (discountCode > 0 && discountCode <= discountPasswords.length)
@@ -72,13 +72,13 @@ async function main() {
         // Don't forget your breaks!
         }
         // Debug outputs are only printed if debugMode is true.
-        if (debugMode) output("Discount: "+discount);
+        if (debugMode) output("Discount: "+discount, "debug");
         // Subtract our discount from 1 to get the remaining percentage of total cost, and multiply through.
         let actualCost = totalCost*(1-discount);
-        if (debugMode) output("Actual Cost: "+actualCost);
+        if (debugMode) output("Actual Cost: "+actualCost, "debug");
         // Determine the amount of change.
         let change = cash-actualCost;
-        if (debugMode) output("Change: "+change);
+        if (debugMode) output("Change: "+change, "debug");
         // Give change, or yell at customer.
         if (change >= 0)
         {
