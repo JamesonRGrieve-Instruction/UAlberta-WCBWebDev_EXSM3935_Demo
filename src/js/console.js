@@ -6,7 +6,11 @@ const timeout = async ms => new Promise(res => setTimeout(res, ms));
 function output(string, type="normal") {
     // Anything passed into here will be printed in the web page.
     let newP = document.createElement("p");
-    newP.innerText = String(string).replaceAll(' ', '\xa0');
+    let text = String(string).replaceAll(' ', '\xa0');
+    if (type == "debug") {
+        text = "DEBUG: "+text;
+    }
+    newP.innerText = text;
     if (type != "normal")
     {
         newP.classList.add(type);
