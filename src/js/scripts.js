@@ -1,14 +1,11 @@
+/*
+Special functions:
+
+print(string) - Outputs the string argument to the console (similar to console.log or Console.WriteLine).
+await input(string) - Prompts the user for input using the string argument.
+*/
+
 async function main() {
-    // This is where the code you're actually experimenting with goes.
-    
-    let prompt = "Please enter your name, or 'Exit' to quit: "
-    let name = await input(prompt);
-
-    while (name != "Exit") 
-    {
-        output("Hello, "+name+"!");
-        name = await input(prompt);
-    }
+    output(test);
 }
-
-
+main();
