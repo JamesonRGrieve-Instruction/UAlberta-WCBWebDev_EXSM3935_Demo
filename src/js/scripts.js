@@ -22,10 +22,16 @@ async function main() {
     output(numDigits("yes"));
 
     output("--Challenge 2 Test--");
-
+    output(countTrue([true, true, false, true, false, false, true])); // 4
+    output(countTrue([true, false, false, false, true])); // 2
+    output(countTrue([true, true, false, "true", false, false, true])); // Undefined
+    output(countTrue(true)); // Undefined
 
     output("--Challenge 3 Test--");
-
+    output(reverseWords("hello user how are you")); // you are how user hello
+    output(reverseWords("what time is it right now")); // now right it is time what
+    output(reverseWords("Hello user how are you")); // Undefined
+    output(reverseWords(123)); // Undefined
 
     output("--Challenge 4 Test--");
 
@@ -79,14 +85,47 @@ function numDigits(num)
 function countTrue(arr)
 {
     let count;
-
+    // If the argument is an array, and has a length of more than 0...
+    if(Array.isArray(arr) && arr.length > 0 /* && arr.every(x => typeof x === "boolean") */)
+    {
+        // Initialize a variable as false.
+        let onlyBools = true;
+        let tempCount = 0;
+        for (item of arr)
+        {
+            // Set the variable to true if any of the items have a type that is not boolean.
+            if (typeof item !== "boolean")
+            {
+                onlyBools = false;
+            }
+            // Increment our temp count if it's true, this only gets transfered to the actual count if everything is a boolean.
+            else if (item === true)
+            {
+                tempCount++;
+            }
+        }
+        // If the variable hasn't been changed, everything is a boolean.
+        if (onlyBools) // nonBools === false
+        {
+            count = tempCount;
+        }
+    }
     return count;
 }
 // Challenge 3: Write a function that takes in a string composed only of lowercase letters and spaces, return undefined if the argument does not meet these requirements. Return a string with the "words" reversed. IE "hello my name is joe" becomes "joe is name my hello".
 function reverseWords(str)
 {
     let modString;
-
+    // If our input is a string and matches the RegEx for infinite lowercase letters and spaces...
+    if (typeof str === "string" && /^[a-z ]*$/.test(str))
+    {
+        // Split our string on the spaces.
+        let stringArray = str.split(" "); // "hi how are you" --> ["hi", "how", "are", "you"]
+        // Reverse the order.
+        stringArray.reverse();
+        // Reassemble.
+        modString = stringArray.join(" ");
+    }
     return modString;
 }
 // Challenge 4: Write a function that takes in an integer between 1 and 1000 inclusive and returns the closest number to that argument that is part of the Fibbonaci sequence. Do not define the Fibbonaci sequence as a constant. Return undefined if the argument is not a number between 1 and 1000 inclusive.
