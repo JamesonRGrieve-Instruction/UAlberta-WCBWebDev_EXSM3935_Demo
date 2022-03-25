@@ -31,7 +31,7 @@ async function main() {
 
 
     output("--Challenge 5 Test--");
-    
+
 }
 
 // Below here are function declarations. The function isn't actually run until it is called.
@@ -76,12 +76,32 @@ function numDigits(num)
     return count;
 }
 // Challenge 2: Write a function that takes in an array of booleans and returns the number of "true" values. If the array contains any non-boolean values, the parameter is not an array, or the array is empty, return undefined. 
+function countTrue(arr)
+{
+    let count;
 
+    return count;
+}
 // Challenge 3: Write a function that takes in a string composed only of lowercase letters and spaces, return undefined if the argument does not meet these requirements. Return a string with the "words" reversed. IE "hello my name is joe" becomes "joe is name my hello".
+function reverseWords(str)
+{
+    let modString;
 
+    return modString;
+}
 // Challenge 4: Write a function that takes in an integer between 1 and 1000 inclusive and returns the closest number to that argument that is part of the Fibbonaci sequence. Do not define the Fibbonaci sequence as a constant. Return undefined if the argument is not a number between 1 and 1000 inclusive.
 // https://www.mathsisfun.com/numbers/fibonacci-sequence.html
+function fibDistance(num)
+{
+    let distance;
 
+    return distance;
+}
 // Challenge 5: Write a function that takes in a string composed of only the values N, E, S, W. Return undefined if the string has any other characters in it. The function will return true if, using the above values as cardinal (compass) directions, someone would end up where they began if they walked 10 feet in each direction. Return false if they would not. Assume they would not cross either pole.
+function backAtStart(str)
+{
+    let backWhereStarted;
 
+    return backWhereStarted;
+}
 
