@@ -117,6 +117,7 @@ function reverseWords(str)
 {
     let modString;
     // If our input is a string and matches the RegEx for infinite lowercase letters and spaces...
+    // if ((charCodeAt(i) >= 97 && charCodeAt(i) <= 122) || charCodeAt(i) == 32) in a for loop could test ascii codes as well.
     if (typeof str === "string" && /^[a-z ]*$/.test(str))
     {
         // Split our string on the spaces.
