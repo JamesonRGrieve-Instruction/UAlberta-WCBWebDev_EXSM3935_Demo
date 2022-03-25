@@ -14,6 +14,24 @@ async function main() {
     // Then addTwoNumbers resolves and adds that value to 12, substituting the result in and assigning it to mySecondVariable.
     let mySecondVariable = addTwoNumbers(returnAValue(), 12);
     output(mySecondVariable);
+
+    output("--Challenge 1 Test--");
+    output(numDigits(7213450.53453));
+    output(numDigits(12));
+    output(numDigits("6234.32"));
+    output(numDigits("yes"));
+
+    output("--Challenge 2 Test--");
+
+
+    output("--Challenge 3 Test--");
+
+
+    output("--Challenge 4 Test--");
+
+
+    output("--Challenge 5 Test--");
+    
 }
 
 // Below here are function declarations. The function isn't actually run until it is called.
@@ -44,3 +62,26 @@ function addTwoNumbers(num1, num2)
 {
     return num1 + num2;
 }
+
+// Challenge 1: Write a function that returns the number of digits in an integer. Return undefined if it's not a number. Truncate fractional components if it's not an integer.
+function numDigits(num)
+{
+    let count;
+    let number = Number(num);
+    if(!isNaN(number))
+    {
+        let integer = Math.floor(number);
+        count = String(integer).length;
+    }
+    return count;
+}
+// Challenge 2: Write a function that takes in an array of booleans and returns the number of "true" values. If the array contains any non-boolean values, the parameter is not an array, or the array is empty, return undefined. 
+
+// Challenge 3: Write a function that takes in a string composed only of lowercase letters and spaces, return undefined if the argument does not meet these requirements. Return a string with the "words" reversed. IE "hello my name is joe" becomes "joe is name my hello".
+
+// Challenge 4: Write a function that takes in an integer between 1 and 1000 inclusive and returns the closest number to that argument that is part of the Fibbonaci sequence. Do not define the Fibbonaci sequence as a constant. Return undefined if the argument is not a number between 1 and 1000 inclusive.
+// https://www.mathsisfun.com/numbers/fibonacci-sequence.html
+
+// Challenge 5: Write a function that takes in a string composed of only the values N, E, S, W. Return undefined if the string has any other characters in it. The function will return true if, using the above values as cardinal (compass) directions, someone would end up where they began if they walked 10 feet in each direction. Return false if they would not. Assume they would not cross either pole.
+
+
