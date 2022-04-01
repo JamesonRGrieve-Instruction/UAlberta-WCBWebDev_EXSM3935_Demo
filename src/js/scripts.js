@@ -1,5 +1,6 @@
 async function main() {
     let menuChoice;
+    let randomVar = await funcWithInput();
     do {
         // Output the menu.
         output("1. String Checker\n2. Integer Checker\n3. Year Checker\n4. Date Checker\n5. Quit Application");
@@ -43,6 +44,10 @@ async function main() {
                 break;
         }
     } while (menuChoice != 5);
+    async function funcWithInput()
+    {
+        return await input("Please enter a thingy-ma-jig: ");
+    }
     function checkString(inputValue)
     // Take in a string from the user, return true if it contains a number or false if it doesnt.
     {
