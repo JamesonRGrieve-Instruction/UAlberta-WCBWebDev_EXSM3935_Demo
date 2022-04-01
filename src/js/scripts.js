@@ -43,78 +43,71 @@ async function main() {
                 break;
         }
     } while (menuChoice != 5);
-}
-function checkString(inputValue)
-// Take in a string from the user, return true if it contains a number or false if it doesnt.
-{
-    let outputValue = false;
-    const searchValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    /*
-    for (let i = 0; i < searchValues.length; i++)
+    function checkString(inputValue)
+    // Take in a string from the user, return true if it contains a number or false if it doesnt.
     {
-        if (inputValue.contains(searchValues[i]))
+        let outputValue = false;
+        const searchValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        /*
+        for (let i = 0; i < searchValues.length; i++)
+        {
+            if (inputValue.contains(searchValues[i]))
+            {
+                outputValue = true;
+            }
+        }
+        */
+        for (item of searchValues) {
+            if (inputValue.includes(item)) {
+                outputValue = true;
+            }
+        }
+        return outputValue;
+    }
+    function checkNumber(inputValue)
+    // Take in a string from the user, return false if it contains any non-numeric characters or true if it doesnt.
+    {
+        let outputValue = true;
+        const searchValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+        for (char of inputValue) {
+            if (!searchValues.includes(char)) {
+                outputValue = false;
+            }
+        }
+        return outputValue;
+    }
+    function checkYear(inputValue)
+    // Take in a string from the user, return true if it is a number between 1900 and the current year, or false if it isn't.
+    {
+        /*
+        let outputValue = false;
+        if (Number(inputValue) >= 1900 && Number(inputValue <= new Date().getFullYear()))
         {
             outputValue = true;
         }
+        return outputValue;
+        */
+        return Number(inputValue) >= 1900 && Number(inputValue <= new Date().getFullYear());
     }
-    */
-    for (item of searchValues)
+    function checkDate(inputValue)
+    // Take in a string from the user, return true if it is a date in the format YYYY-MM-DD where MM<=12 and DD<=31, and false if it isn't.
     {
-        if (inputValue.includes(item))
-        {
-            outputValue = true;
-        }
-    }
-    return outputValue;
-}
-function checkNumber(inputValue)
-// Take in a string from the user, return false if it contains any non-numeric characters or true if it doesnt.
-{
-    let outputValue = true;
-    const searchValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    
-    for (char of inputValue)
-    {
-        if (!searchValues.includes(char))
-        {
+        let outputValue = true;
+        let inputDate = inputValue.split("-");
+        // Validate Year
+        if (!checkYear(inputDate[0])) {
             outputValue = false;
         }
+        // Validate Month
+        if (inputDate[1] < 1 || inputDate[1] > 12 || !Number.isInteger(Number(inputDate[1]))) {
+            outputValue = false;
+        }
+        // Validate Day
+        if (inputDate[2] < 1 || inputDate[2] > 31 || !Number.isInteger(Number(inputDate[2]))) {
+            outputValue = false;
+        }
+
+        return outputValue;
     }
-    return outputValue;
-}
-function checkYear(inputValue)
-// Take in a string from the user, return true if it is a number between 1900 and the current year, or false if it isn't.
-{
-    /*
-    let outputValue = false;
-    if (Number(inputValue) >= 1900 && Number(inputValue <= new Date().getFullYear()))
-    {
-        outputValue = true;
-    }
-    return outputValue;
-    */
-    return Number(inputValue) >= 1900 && Number(inputValue <= new Date().getFullYear());
-}
-function checkDate(inputValue)
-// Take in a string from the user, return true if it is a date in the format YYYY-MM-DD where MM<=12 and DD<=31, and false if it isn't.
-{
-    let outputValue = true;
-    let inputDate = inputValue.split("-");
-    // Validate Year
-    if (!checkYear(inputDate[0]))
-    {
-        outputValue = false;
-    }
-    // Validate Month
-    if (inputDate[1] < 1 || inputDate[1] > 12 || !Number.isInteger(Number(inputDate[1])))
-    {
-        outputValue = false;
-    }
-    // Validate Day
-    if (inputDate[2] < 1 || inputDate[2] > 31 || !Number.isInteger(Number(inputDate[2])))
-    {
-        outputValue = false;
-    }
-    
-    return outputValue;
 }
