@@ -60,7 +60,7 @@ function checkString(inputValue)
     */
     for (item of searchValues)
     {
-        if (inputValue.contains(item))
+        if (inputValue.includes(item))
         {
             outputValue = true;
         }
@@ -75,7 +75,7 @@ function checkNumber(inputValue)
     
     for (char of inputValue)
     {
-        if (!searchValues.contains(char))
+        if (!searchValues.includes(char))
         {
             outputValue = false;
         }
@@ -106,12 +106,12 @@ function checkDate(inputValue)
         outputValue = false;
     }
     // Validate Month
-    if (inputDate[1] < 1 || inputDate[1] > 12)
+    if (inputDate[1] < 1 || inputDate[1] > 12 || !Number.isInteger(Number(inputDate[1])))
     {
         outputValue = false;
     }
     // Validate Day
-    if (inputDate[2] < 1 || inputDate[2] > 31)
+    if (inputDate[2] < 1 || inputDate[2] > 31 || !Number.isInteger(Number(inputDate[2])))
     {
         outputValue = false;
     }
