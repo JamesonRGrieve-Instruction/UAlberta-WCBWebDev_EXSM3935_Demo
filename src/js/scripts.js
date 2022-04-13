@@ -1,49 +1,54 @@
 async function main() {
-    // Functions allow us to wrap multiple statements into a single name, and call them easier.
-    printMenu();
+    
+    // 'let' defines a local variable. 
+    // 'a' is the name of the variable and can be any characters including letters, underscores and numbers but cannot start with a number.
+    // 'b' is the (optional) value to be assigned to the variable at declaration time (initialization). It can be a string, boolean, number, or another variable.
+    // 'const' defines a local constant. Constants must be initialized and cannot be changed thereafter.
+    // 'c' is the name of the constant and follows the same rules as 'a'.
+    // 'var' defines a global variable that is not scoped to a code block. These aren't used very often anymore.
+    // 'd' is the name of the variable and follows the same rules as 'a'.
+    let a = "b";
+    const c = "b";
+    var d = "b";
 
-    // Lines: 3, 12, 13, 14, 15, 16, then returns to 4 and ends.
+    // 'if' defines a decision (true side). The code block immediately following the condition is owned by the if, and is what runs if said condition is true.
+    // '()' delimits the condition for the decision. Conditions must evaluate to a boolean value (true/false). 
+    if (a > c)
+    {
 
-    greetUser("James");
-    greetUser("John");
-    greetUser("Jane");
+    }
+    // 'else' defines the false side of a decision, and is optional. The code block immediately following the else is owned thereby, and is what runs if the preceding if condition is false.
+    else
+    {
 
-    output(giveMePi());
+    }
 
-    output(firstLetterAndLength("James"));
-    output(firstLetterAndLength("Antidisestablishmentarianism"));
+    // 'for' defines a for loop.
+    // 'e' defines the iterator variable that changes with every iteration through the loop.
+    // The first section serves initialization.
+    // '1' defines the initial value for 'e'.
+    // The second section serves checking.
+    // '10' in this case defines the end of the loop (a condition, must evaluate to true/false). Iteration will stop once this condition is false.
+    // The third section serves modification.
+    // '2' in this case defines the incrementation of 'e'. 2 will be added for every iteration of the loop.
+    for (let e = 1; e < 10; e += 2)
+    {
+
+    }
+
+    // This ia function call, and will call the function named 'f' with the argument value 'a'. The value of 'a' will get assigned to the parameter 'g'.
+    f(a);
 }
 
-// When printMenu() is called on line 3, it jumps into here and starts executing. When it's done, it returns to line 8 and continues.
-function printMenu() {
-    output("---Menu---");
-    output("1. Do Stuff");
-    output("2. Do More Stuff");
-    output("3. Do Extra Stuff");
-    output("0. Exit");
-}
-
-function greetUser(name)
+// 'function' defines a function declaration. The code block immediately following the parameter list is owned by the function and runs when the function is called.
+// 'f' is the name of the function and follows the same rules as 'a'. 
+// '()' delimit the parameter list, which are local variables that are initalized with argument values when the function is called.
+// 'g' is a parameter, or input value.
+// 'h' is a variable local to the function and only lives while the function runs.
+// 'return' will output the value immediately following it from the function.
+function f(g)
 {
-    output("Hello, welcome to the program, "+name);
-    output("I hope you're having a good day.");
-}
+    let h;
 
-// When a function with a return ends, the value returned takes the place of the function call (IE output(giveMePie()) becomes output(3.141592654)).
-function giveMePi()
-{
-    return 3.141592654;
-}
-
-function firstLetterAndLength(string)
-{
-    let toReturn = [];
-    let firstLetter = string[0];
-    let length = string.length;
-    toReturn.push(firstLetter);
-    toReturn.push(length);
-    return toReturn; 
-
-    // One line for those curious.
-    // return [string[0], string.length];
+    return h;
 }
